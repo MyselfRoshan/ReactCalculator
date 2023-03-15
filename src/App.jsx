@@ -2,7 +2,7 @@ import { useState } from "react";
 import Button from "./Button";
 
 function App() {
-  const [count, setCount] = useState(0);
+  const [result, setResult] = useState("0");
   const butttonTxtArray = [
     "%",
     "+/-",
@@ -27,13 +27,29 @@ function App() {
   ];
 
   const buttons = butttonTxtArray.map((butttonTxt, index) => {
-    return <Button key={index} butttonTxt={butttonTxt}></Button>;
+    return (
+      <Button
+        key={index}
+        butttonTxt={butttonTxt}
+        result={result}
+        setResult={setResult}
+      ></Button>
+    );
   });
+
+  function handleChange(e) {
+    setResult(e.target.value);
+  }
   return (
     <main className="App">
       <div className="calculator-frame">
         <div className="display-container">
-          <input type="text" value={12345} className="screen" />
+          <input
+            type="text"
+            className="screen"
+            onChange={handleChange}
+            value={result}
+          />
         </div>
         <div className="buttons">{buttons}</div>
       </div>
