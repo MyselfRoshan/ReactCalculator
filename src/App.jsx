@@ -2,7 +2,7 @@ import { useState } from "react";
 import Button from "./Button";
 
 function App() {
-  const [result, setResult] = useState("0");
+  const [result, setResult] = useState("");
   const butttonTxtArray = [
     "%",
     "+/-",
