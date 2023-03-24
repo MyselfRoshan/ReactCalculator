@@ -5,7 +5,7 @@ function Button({ butttonTxt, result, setResult }) {
       // const regexNumber = /[0-9]|./;
       if (targetBtnTxt === "AC") return "";
       if (targetBtnTxt === "+/-") return `${Number(prevResult) * -1}`;
-      if (targetBtnTxt === "C" && !prevResult.length)
+      if (targetBtnTxt === "C" && prevResult.length >= 0)
         return prevResult.slice(0, prevResult.length - 1);
       // if (regexNumber.test(targetBtnTxt)) {
       // console.log(targetBtnTxt);
