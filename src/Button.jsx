@@ -10,10 +10,14 @@ function Button({ butttonTxt, result, setResult }) {
   // operands.forEach((element) => {
   //   console.log(element);
   // });
-  operators.forEach((element) => {
-    console.log(element);
-  });
-
+  // operators.forEach((element) => {
+  //   console.log(element);
+  // });
+  let results;
+  for (let i = 0; i < operators.length; i++) {
+    results = Number(operands[i]);
+  }
+  console.log(results);
   function handleClick(e) {
     const targetBtnTxt = e.target.innerText;
     // console.log(operands);
