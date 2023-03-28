@@ -1,8 +1,9 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import Button from "./Button";
 
 function App() {
   const [result, setResult] = useState("");
+  const inputRef = useRef();
   const butttonTxtArray = [
     "%",
     // "(",
@@ -30,6 +31,8 @@ function App() {
   ];
 
   function handleClick() {
+    // console.log(inputRef.current);
+    inputRef.current.focus();
     try {
       const output = result
         .replace("÷", "/")
@@ -38,7 +41,7 @@ function App() {
         .replace("%", "/100")
         .replace("²", "**2");
       // setResult(eval(output).toString());
-      setResult(eval?.(`"use strict";(${output})`));
+      output ? setResult(eval?.(`"use strict";(${output})`)) : setResult("");
     } catch {
       setResult("Math Error!");
     }
@@ -50,6 +53,7 @@ function App() {
         butttonTxt={butttonTxt}
         result={result}
         setResult={setResult}
+        inputRef={inputRef}
       ></Button>
     );
   });
@@ -62,11 +66,12 @@ function App() {
       <div className="calculator-frame">
         <div className="display-container">
           <input
+            ref={inputRef}
             type="text"
             className="screen"
             onChange={handleChange}
             value={result}
-            disabled
+            // disabled
           />
         </div>
         <div className="buttons">

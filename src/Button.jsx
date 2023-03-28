@@ -1,5 +1,6 @@
-function Button({ butttonTxt, result, setResult }) {
+function Button({ butttonTxt, setResult, inputRef }) {
   function handleClick(e) {
+    inputRef.current.focus();
     const targetBtnTxt = e.target.innerText;
     setResult((prevResult) => {
       if (targetBtnTxt === "AC") return "";
