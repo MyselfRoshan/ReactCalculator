@@ -74,13 +74,16 @@ body {
 
 .screen {
   display: block;
+  cursor: text;
   width: 100%;
   padding: 0.5rem;
-  font-size: 4rem;
+  font-size: 2.5rem;
+  height: 4rem;
   font-family: "digital-7", monospace;
   font-weight: 400;
   text-align: right;
-  color: #0c0c0c;
+  /* color: #0c0c0c; */
+  color: #1e3f0e;
   letter-spacing: 2px;
   border: 0;
   border-radius: 5px;
