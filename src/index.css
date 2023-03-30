@@ -7,8 +7,10 @@
 @font-face {
   font-family: "digital-7";
   font-weight: 400;
-  src: url("/src/assets/fonts/digital-7_mono-webfont.woff2") format("woff2"),
-    url("/src/assets/fonts/digital-7_mono-webfont.woff") format("woff");
+  src: url("/src/assets/fonts/Squada_One/SquadaOne-Regular.ttf");
+  /* src: url("/src/assets/fonts/segment7-font/Segment7-4Gml.otf"); */
+  /* src: url("/src/assets/fonts/digital-7_mono-webfont.woff2") format("woff2"),
+    url("/src/assets/fonts/digital-7_mono-webfont.woff") format("woff"); */
 }
 
 :root {
@@ -81,6 +83,7 @@ body {
   font-size: 2.5rem;
   height: 4rem;
   font-family: "digital-7", monospace;
+  /* font-family: "Unica One", monospace; */
   font-weight: 400;
   text-align: right;
   /* color: #0c0c0c; */

@@ -31,7 +31,6 @@ function App() {
   ];
 
   function handleClick() {
-    // console.log(inputRef.current);
     inputRef.current.focus();
     try {
       const output = result
@@ -40,8 +39,9 @@ function App() {
         .replace("–", "-")
         .replace("%", "/100")
         .replace("²", "**2");
-      // setResult(eval(output).toString());
-      output ? setResult(eval?.(`"use strict";(${output})`)) : setResult("");
+      output
+        ? setResult((eval?.(`"use strict";(${output})`)).toString())
+        : setResult("");
     } catch {
       setResult("Math Error!");
     }
