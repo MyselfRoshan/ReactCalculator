@@ -1,4 +1,4 @@
-function Button({ butttonTxt, setResult, inputRef }) {
+function Button({ butttonTxt, setResult, inputRef, result }) {
   function handleClick(e) {
     inputRef.current.focus();
     const targetBtnTxt = e.target.innerText;
@@ -9,9 +9,12 @@ function Button({ butttonTxt, setResult, inputRef }) {
       }
       if (targetBtnTxt === "C" && prevResult.length >= 0)
         return prevResult.slice(0, prevResult.length - 1);
-      if (targetBtnTxt === "=") return eval(prevResult);
+      // return prevResult !== null
       return prevResult.concat(e.target.innerText);
-      // return !prevResult ? targetBtnTxt : prevResult.concat(targetBtnTxt);
+      // : result;
+      // return prevResult !== null
+      //   ? prevResult.concat(e.target.innerText)
+      //   : result;
     });
   }
   return (
